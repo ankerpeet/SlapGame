@@ -2,6 +2,8 @@
 
 #canvas {
     padding: 25px;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
 }
 .game-play {
     margin-top: 250px;
@@ -19,8 +21,18 @@
 .progress-bar {
     min-width: 20;
 }
+#hero-health {
+    background-color: #5cb85c;
+}
+#monster-health {
+    background-color: #5cb85c;
+}
 .reset {
     margin-top: 25px;
+}
+.background {
+    background-color: #5cb85c;
+    height: 100vh;
 }
 .loader {
     border: 10px solid #f3f3f3; /* Light grey */
