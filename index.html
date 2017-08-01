@@ -34,7 +34,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <span id="message"><button type="button" class="btn btn-lg" onclick="startGame()">Start Game</button></span>
+                        <span id="message"><button type="button" class="btn btn-lg" onclick="app.controller.startGame()">Start Game</button></span>
                     </div>
                 </div>
                 <div class="row game-play">
@@ -44,16 +44,18 @@
                 </div>
                 <div class="buttons">
                     <div>
-                        <button id="stab" class="btn btn-default" type="button" onclick="knightAttack(5)"><span id="dis-stab">Stab</span></button>
-                        <button id="slash" class="btn btn-default" type="button" onclick="knightAttack(10)"><span id="dis-slash">Slash</span></button>
-                        <button id="mega" class="btn btn-default" type="button" onclick="knightAttack(15)"><span id="dis-mega">Mega Hit</span></button>
+                        <button id="stab" class="btn btn-default" type="button" onclick="app.controller.checkAttack(0)"><span id="dis-stab">Stab</span></button>
+                        <button id="slash" class="btn btn-default" type="button" onclick="app.controller.checkAttack(1)"><span id="dis-slash">Slash</span></button>
+                        <button id="mega" class="btn btn-default" type="button" onclick="app.controller.checkAttack(2)"><span id="dis-mega">Mega Hit</span></button>
                     </div>
-                    <button onclick="reset()" type="button" class="btn btn-danger reset">Reset</button>
+                    <button onclick="app.controller.reset()" type="button" class="btn btn-danger reset">Reset</button>
                     <button onclick="pause()" type="button" class="btn btn-success reset"><span id="pause">Pause</span></button>
                 </div>
             </div>
         </div>
     </div>
+    <script src="service.js"></script>
+    <script src="controller.js"></script>
     <script src="game.js"></script>
 </body>
 
