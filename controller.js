@@ -2,18 +2,26 @@ function Controller() {
     var service = new Service()
     //Count Down
     function countDown() {
-        change('message', '3');
-        setTimeout(function () { change('message', '2'); }, 1000);
-        setTimeout(function () { change('message', '1'); }, 2000);
-        setTimeout(function () { change('message', 'Go'); }, 3000);
+        change('message', '<h3>3</h3>');
+        setTimeout(function () { change('message', '<h3>2</h3>'); }, 1000);
+        setTimeout(function () { change('message', '<h3>1</h3>'); }, 2000);
+        setTimeout(function () { change('message', '<h3>Go</h3>'); }, 3000);
+        setTimeout(function () { change('message', ''); }, 4000);
     }
     //Reset Game
     this.reset = function reset() {
         location.reload();
     }
-    this.checkAttack = function checkAttack(power){
+    this.checkAttack = function checkAttack(power) {
+        document.getElementById("knight").src = "knight-slash.png";
+        setTimeout(function () { document.getElementById("knight").src = "knight.png"; }, 150);
         service.knightAttack(power);
         buttonTime(power);
+        checkHeroHealth();
+        checkMonsterHealth();
+        draw();
+    }
+    function checkMonster() {
         checkHeroHealth();
         checkMonsterHealth();
         draw();
@@ -81,9 +89,13 @@ function Controller() {
         disable("slash", false);
         disable("stab", false);
     }
+    this.modifier = function(){
+        service.modifier();
+    }
     //Start Game Function
     this.startGame = function startGame() {
         setTimeout(function () { service.monsterAttack(Math.floor((Math.random() * 11) + 1)); }, 3000);
+        setTimeout(function () { checkMonster() }, Math.floor((Math.random() * 2000) + 500))
         setTimeout(function () { enableButtons() }, 3000);
         countDown();
     }

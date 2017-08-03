@@ -18,6 +18,10 @@
     margin-top: 10px;
     position: fixed;
 }
+#sword {
+    max-height: 100px;
+    margin-bottom: -50px;
+}
 .progress-bar {
     min-width: 20;
 }
@@ -33,6 +37,9 @@
 .background {
     background-color: #5cb85c;
     height: 100vh;
+}
+#message {
+    min-height: 30px;
 }
 .loader {
     border: 10px solid #f3f3f3; /* Light grey */
